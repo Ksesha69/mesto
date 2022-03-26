@@ -1,0 +1,24 @@
+.popup__box {
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    max-width: 358px;
+    max-height: 14px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.popup__box:last-child {
+    margin-top: 30px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .popup__box {
+        min-width: 238px;
+        padding-bottom: 13px;
+    }
+}

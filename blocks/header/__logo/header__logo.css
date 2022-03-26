@@ -1,0 +1,11 @@
+.header__logo {
+    max-width: 142px;
+    max-height: 33px;
+    margin: 0 22px;
+    transition: opacity 0.5s;
+    cursor: pointer;
+}
+
+.header__logo:hover {
+    opacity: 0;
+}
