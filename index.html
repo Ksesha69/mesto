@@ -13,83 +13,83 @@
                 <img class="header__logo" alt="логотип" src="./images/logo.svg">
             </a>
         </header>
-        <section class="profile">
-            <div class="profile__info">
-                <img class="profile__avatar" alt="Жак-Ив Кусто" src="./images/image.jpg">
-                <div class="profile__text">
-                    <div>
-                        <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <p class="profile__job">Исследователь океана</p>
-                    </div>
-                    <button class="button profile__edit-button">
-                        <img src="./images/Vector(1).svg" alt="Изменить подпись">
-                    </button>
-                    <div class="popup">
-                        <div class="popup__container">
-                            <button class="button popup__close-button"></button>
-                            <section class="popup__content">
-                                <h2 class="popup__header">Редактировать профиль</h2>
-                                <form class="popup__form">
-                                    <input type="text" class="popup__box popup__box_name" value="Жак-Ив Кусто">
-                                    <input type="text" class="popup__box popup__box_job" value="Исследователь океана">
-                                    <button type="submit" class="button popup__save-button">Сохранить</button>
-                                </form>
-                            </section>
+        <main>
+            <section class="profile">
+                <div class="profile__info">
+                    <img class="profile__avatar" alt="Жак-Ив Кусто" src="./images/image.jpg">
+                    <div class="profile__text">
+                        <div>
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <p class="profile__job">Исследователь океана</p>
                         </div>
+                        <button type="button" class="button profile__edit-button">
+                            <img src="./images/Vector.svg" alt="Изменить подпись">
+                        </button>
                     </div>
                 </div>
-            </div>
-            <button class="button profile__add-button">
-                <img src="./images/plus.svg" alt="Добавить фото">
-            </button>
-        </section>
-        <section class="elements">
-            <ul class="elements__item">
-                <li><img class="elements__item elements__item_image" alt="Степь" src="./images/pri2555.jpg"></li>
-                <li class="elements__table">
-                    <p class="elements__item elements__item_text">Астрахань</p>
-                    <button class="button button_like"></button>
-                    
-                </li>
-            </ul>
-            <ul class="elements__item">
-                <li><img class="elements__item elements__item_image" alt="Тайга" src="./images/b0b3b1234e050ccce402be5cb0ecd71c.png"></li>
-                <li class="elements__table">
-                    <p class="elements__item elements__item_text">Сибирь</p>
-                    <button class="button button_like"></button></li>
-            </ul>
-            <ul class="elements__item">
-                <li><img class="elements__item elements__item_image" alt="Вулкан" src="./images/thumb_9860_content_gallery.jpeg"></li>
-                <li class="elements__table">
-                    <p class="elements__item elements__item_text">Камчатка</p>
-                    <button class="button button_like"></button>
-                </li>
-            </ul>
-            <ul class="elements__item">
-                <li><img class="elements__item elements__item_image" alt="Озеро" src="./images/plus-grand-pays-la-russie.jpg"></li>
-                <li class="elements__table">
-                    <p class="elements__item elements__item_text">Байкал</p>
-                    <button class="button button_like"></button>
-                </li>
-            </ul>
-            <ul class="elements__item">
-                <li><img class="elements__item elements__item_image" alt="Море" src="./images/4516022-severe-kola-when-the-trip-fails-and-how-i-drowned-my-camera-in-the-barents-sea-travels.jpg"></li>
-                <li class="elements__table">
-                    <p class="elements__item elements__item_text">Мурманск, Баренцево море</p>
-                    <button class="button button_like"></button>
-                </li>
-            </ul>
-            <ul class="elements__item">
-                <li><img class="elements__item elements__item_image" alt="Гора" src="./images/tbLoa.jpg"></li>
-                <li class="elements__table">
-                    <p class="elements__item elements__item_text">Эльбрус</p>
-                    <button class="button button_like"></button>
-                </li>
-            </ul>
-        </section>
+                <button type="button" class="button profile__add-button">
+                    <img src="./images/plus.svg" alt="Добавить фото">
+                </button>
+            </section>
+            <section class="elements">
+                <div class="elements__item">
+                    <img class="element__image" alt="Степь" src="./images/pri2555.jpg">
+                    <div class="elements__table">
+                        <p class="element__text">Астрахань</p>
+                        <button type="button" class="button element__like"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="element__image" alt="Тайга" src="./images/b0b3b1234e050ccce402be5cb0ecd71c.png">
+                    <div class="elements__table">
+                        <p class="element__text">Сибирь</p>
+                        <button type="button" class="button element__like"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="element__image" alt="Вулкан" src="./images/thumb_9860_content_gallery.jpeg">
+                    <div class="elements__table">
+                        <p class="element__text">Камчатка</p>
+                        <button type="button" class="button element__like"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="element__image" alt="Озеро" src="./images/plus-grand-pays-la-russie.jpg">
+                    <div class="elements__table">
+                        <p class="element__text">Байкал</p>
+                        <button type="button" class="button element__like"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="element__image" alt="Море" src="./images/4516022-severe-kola-when-the-trip-fails-and-how-i-drowned-my-camera-in-the-barents-sea-travels.jpg">
+                    <div class="elements__table">
+                        <p class="element__text">Мурманск, Баренцево море</p>
+                        <button type="button" class="button element__like"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="element__image" alt="Гора" src="./images/tbLoa.jpg">
+                    <div class="elements__table">
+                        <p class="element__text">Эльбрус</p>
+                        <button type="button" class="button element__like"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
         <footer class="footer">
-            <p>&copy; 2022 Mesto Russia</p>
+            <p class="footer__text">&copy; 2022 Mesto Russia</p>
         </footer>
+    </div>
+    <div class="popup">
+        <div class="popup__container">
+            <button type="button" class="button popup__close-button"></button>
+            <h2 class="popup__header">Редактировать профиль</h2>
+            <form name="popup__form">
+                <input type="text" name="popup-box__theme_name" class="popup-box popup-box__theme_name" value="Жак-Ив Кусто">
+                <input type="text" name="popup-box__theme_job" class="popup-box popup-box__theme_job" value="Исследователь океана">
+                <button type="submit" class="button popup__save-button">Сохранить</button>
+            </form>
+        </div>
     </div>
     <script src="./scripts/index.js"></script> 
 </body>

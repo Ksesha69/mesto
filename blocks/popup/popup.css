@@ -1,9 +1,9 @@
 .popup {
-    font-family: "inter", "Arial", "sans-serif";
+    font-family: "inter", "Arial", sans-serif;
     position: fixed;
     z-index: 100;
     color: #000000;
-    background: rgba(0, 0, 0, .6);
+    background: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
     right: 0;

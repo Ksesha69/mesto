@@ -27,5 +27,7 @@
         min-height: 46px;
         font-size: 14px;
         line-height: 17px;
+        padding: 0;
+        margin: 25px 0 25px;
     }
 }
