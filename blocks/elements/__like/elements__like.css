@@ -1,5 +1,5 @@
-.element__like {
-    background-image: url(../../images/like.svg);
+.elements__like {
+    background-image: url(../../../images/like.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #ffffff;
@@ -9,10 +9,10 @@
     transition: opacity 0.2s;
 }
 
-.element__like:hover {
+.elements__like:hover {
     opacity: 0.5;
 }
 
-.element__like:focus {
-    background-image: url(../../images/Union.svg);
+.elements__like:focus {
+    background-image: url(../../../images/Union.svg);
 }
