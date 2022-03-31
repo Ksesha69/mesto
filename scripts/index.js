@@ -1,9 +1,9 @@
 const popupElement = document.querySelector('.popup');
 const button = document.querySelector('.profile__edit-button');
 const closeButton = popupElement.querySelector('.popup__close-button');
-let formElement = document.querySelector('.popup__container');
-let nameInput = document.querySelector('.popup-box_theme_name');
-let jobInput = document.querySelector('.popup-box_theme_job');
+let formElement = document.querySelector('.popup__form');
+let nameInput = document.querySelector('.popup-box_name');
+let jobInput = document.querySelector('.popup-box_job');
 let profileName = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__job');
 function openPopup() {
