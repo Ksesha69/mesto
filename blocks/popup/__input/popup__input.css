@@ -1,4 +1,4 @@
-.popup-box {
+.popup__input {
     margin: 0;
     padding-bottom: 13px;
     border: 0;
@@ -13,12 +13,12 @@
     color: #000000;
 }
 
-.popup-box:last-child {
+.popup__input:last-child {
     margin-top: 30px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
-    .popup-box {
+    .popup__input {
         min-width: 238px;
         padding-bottom: 13px;
     }
