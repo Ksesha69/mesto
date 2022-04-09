@@ -1,0 +1,25 @@
+.button__close-photo {
+    position: relative;
+    right: 0%;
+    bottom: 600px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.button__close-photo::before {
+    position: absolute;
+    content: '';
+    height: 32px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+}
+.button__close-photo::after {
+    position: absolute;
+    content: '';
+    height: 32px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    transform: rotate(-45deg);
+}
+
