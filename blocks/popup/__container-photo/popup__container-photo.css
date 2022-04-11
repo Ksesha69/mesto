@@ -1,9 +1,4 @@
 .popup__container-photo {
-min-width: 400px;
-}
-
-@media screen and (min-width: 320px) and (max-width: 768px) {
-    .popup__container-photo {
-        text-align: center;
-    }
+display: flex;
+flex-direction: column;
 }

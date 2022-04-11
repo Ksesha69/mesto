@@ -21,7 +21,7 @@ const openImage = bigPhoto.querySelector('.popup__image');
 const openText = bigPhoto.querySelector('.popup__text');
 const bigPhotoClose = bigPhoto.querySelector('.popup__close-button');
 
-    function addCard(imageUrl, imageName) {
+function addCard(imageUrl, imageName) {
     const сardsElement = photoTemplate.querySelector('.elements__item').cloneNode(true);
     const сardsElementImage = сardsElement.querySelector('.elements__image');
     сardsElementImage.src = imageName;
@@ -29,13 +29,13 @@ const bigPhotoClose = bigPhoto.querySelector('.popup__close-button');
     сardsElement.querySelector('.elements__text').textContent = imageUrl;
     сardsElement.querySelector('.elements__like').addEventListener('click', function (event) {
         event.target.classList.toggle('elements__like_active');
-    })
+})
 //создание попап большого фото
     сardsElementImage.addEventListener('click', () => {
         openPopup(bigPhoto);
-        openImage.src = imageName;
-        openImage.alt = imageName;
-        openText.textContent = imageUrl;
+            openImage.src = imageName;
+            openImage.alt = imageName;
+            openText.textContent = imageUrl;
         closePopup(bigPhotoClose);
     });
     сardsElement.querySelector('.button__delete').addEventListener('click', function () {
@@ -62,7 +62,7 @@ const createCard = (evt) => {
 closePopup(photoPopup);
 }
 //функция добавления новой карточки
- profileOpenBtn.addEventListener("click", () => {
+profileOpenBtn.addEventListener("click", () => {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
     openPopup(profilePopup);
@@ -92,5 +92,4 @@ bigPhoto.addEventListener('click', () => {openPopup(bigPhoto) });
 bigPhoto.addEventListener('click', () => {closePopup(bigPhoto) });
 profileForm.addEventListener("submit", handleProfileFormSubmit); 
 photoPopup.addEventListener("submit", createCard);
-
 
