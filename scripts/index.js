@@ -20,6 +20,7 @@ const bigPhoto = document.querySelector('.popup-bigPhoto');
 const openImage = bigPhoto.querySelector('.popup__image');
 const openText = bigPhoto.querySelector('.popup__text');
 const bigPhotoClose = bigPhoto.querySelector('.popup__close-button');
+const photoForm = document.querySelector('.popup-photo__form');
 
 function addCard(imageUrl, imageName) {
     const сardsElement = photoTemplate.querySelector('.elements__item').cloneNode(true);
@@ -52,6 +53,7 @@ initialCards.forEach(function (pic) {
     const newCard = addCard(pic.name, pic.link);
     renderCard(newCard); 
 })
+
  //создание новой карточки фото
 const createCard = (evt) => {
     evt.preventDefault();
@@ -59,8 +61,16 @@ const createCard = (evt) => {
     container.prepend(newCard);
     photoInput.value = '';
     titleInput.value = '';
-closePopup(photoPopup);
+    closePopup(photoPopup);
+    disabledSubmitButton();
 }
+
+disabledSubmitButton = () => {
+    const disabledButton = photoPopup.querySelector('.popup__save-button');
+    disabledButton.classList.add('popup__save-button_noactive');
+    disabledButton.setAttribute('disabled', true);
+}
+
 //функция добавления новой карточки
 profileOpenBtn.addEventListener("click", () => {
     nameInput.value = profileName.textContent;
