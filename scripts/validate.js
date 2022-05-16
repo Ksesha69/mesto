@@ -29,15 +29,20 @@ const showError = (object, formElement, inputElement, errorMessage) => {
   });
 }
 
-const toggleButtonState = (object, inputList, buttonElement) => {
-    if (hasInvalidInput(inputList)) {
-      buttonElement.classList.add(object.inactiveButtonClass);
-      buttonElement.disabled = true;
-    }
-    else {buttonElement.classList.remove(object.inactiveButtonClass)
-      buttonElement.disabled = false;
-    }
-  }
+const disableButton = (object, buttonElement) => {
+    buttonElement.classList.add(object.inactiveButtonClass); 
+    buttonElement.disabled = true; 
+}
+
+const toggleButtonState = (object, inputList, buttonElement) => { 
+  if (hasInvalidInput(inputList)) { 
+    disableButton(object, buttonElement)
+  } 
+  else {buttonElement.classList.remove(object.inactiveButtonClass) 
+    buttonElement.disabled = false; 
+  } 
+} 
+
 
   const setEventListeners = (object, formElement) => {
     const inputList = Array.from(formElement.querySelectorAll(object.inputSelector));

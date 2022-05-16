@@ -22,6 +22,7 @@ const openText = bigPhoto.querySelector('.popup__text');
 const bigPhotoClose = bigPhoto.querySelector('.popup__close-button');
 const photoForm = document.querySelector('.popup-photo__form');
 
+
 function addCard(imageUrl, imageName) {
     const сardsElement = photoTemplate.querySelector('.elements__item').cloneNode(true);
     const сardsElementImage = сardsElement.querySelector('.elements__image');
@@ -53,6 +54,7 @@ initialCards.forEach(function (pic) {
     const newCard = addCard(pic.name, pic.link);
     renderCard(newCard); 
 })
+
 
  //создание новой карточки фото
 const createCard = (evt) => {
@@ -96,8 +98,8 @@ function openPopup(popup) {
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
-    popup.removeEventListener('keydown', keyHandler);
-    document.removeEventListener('click', closeOnOverlay);
+    document.removeEventListener('keydown', keyHandler);
+    popup.removeEventListener('click', closeOnOverlay);
 }
 
 function keyHandler (evt) {
