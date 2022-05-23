@@ -38,7 +38,6 @@ function addCard(imageUrl, imageName) {
             openImage.src = imageName;
             openImage.alt = imageName;
             openText.textContent = imageUrl;
-        closePopup(bigPhotoClose);
     });
     сardsElement.querySelector('.button__delete').addEventListener('click', function () {
         сardsElement.remove();
@@ -61,8 +60,7 @@ const createCard = (evt) => {
     evt.preventDefault();
     const newCard = addCard(photoInput.value, titleInput.value);
     container.prepend(newCard);
-    photoInput.value = '';
-    titleInput.value = '';
+    evt.target.reset();
     closePopup(photoPopup);
     disabledSubmitButton();
 }
@@ -92,17 +90,17 @@ function handleProfileFormSubmit (evt) {
 //открытие и закрытие попап окон
 function openPopup(popup) {
     popup.classList.add('popup_opened');
-    document.addEventListener('keydown', keyHandler);
-    popup.addEventListener('click', closeOnOverlay);
+    document.addEventListener('keydown', clickEscape);
+    popup.addEventListener('mousedown', closeOnOverlay);
 };
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
-    document.removeEventListener('keydown', keyHandler);
-    popup.removeEventListener('click', closeOnOverlay);
+    document.removeEventListener('keydown', clickEscape);
+    window.removeEventListener('mousedown', closeOnOverlay);
 }
 
-function keyHandler (evt) {
+function clickEscape (evt) {
     if (evt.key === 'Escape') {
         const openedPopup = document.querySelector('.popup_opened');
         closePopup(openedPopup);
