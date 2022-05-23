@@ -97,7 +97,7 @@ function openPopup(popup) {
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
     document.removeEventListener('keydown', clickEscape);
-    window.removeEventListener('mousedown', closeOnOverlay);
+    popup.removeEventListener('mousedown', closeOnOverlay);
 }
 
 function clickEscape (evt) {
