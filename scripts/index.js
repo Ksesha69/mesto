@@ -90,17 +90,17 @@ function handleProfileFormSubmit (evt) {
 //открытие и закрытие попап окон
 function openPopup(popup) {
     popup.classList.add('popup_opened');
-    document.addEventListener('keydown', clickEscape);
+    document.addEventListener('keydown', handleEscape);
     popup.addEventListener('mousedown', closeOnOverlay);
 };
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
-    document.removeEventListener('keydown', clickEscape);
+    document.removeEventListener('keydown', handleEscape);
     popup.removeEventListener('mousedown', closeOnOverlay);
 }
 
-function clickEscape (evt) {
+function handleEscape (evt) {
     if (evt.key === 'Escape') {
         const openedPopup = document.querySelector('.popup_opened');
         closePopup(openedPopup);
@@ -118,8 +118,7 @@ function closeOnOverlay (evt) {
 profileCloseBtn.addEventListener('click', () => {closePopup(profilePopup) });
 buttonPhoto.addEventListener('click', () => {openPopup(photoPopup) });
 closeButtonPhoto.addEventListener('click', () => {closePopup(photoPopup) });
-bigPhoto.addEventListener('click', () => {openPopup(bigPhoto) });
-bigPhoto.addEventListener('click', () => {closePopup(bigPhoto) });
+bigPhotoClose.addEventListener('click', () => {closePopup(bigPhoto) });
 profileForm.addEventListener("submit", handleProfileFormSubmit); 
 photoPopup.addEventListener("submit", createCard);
 
