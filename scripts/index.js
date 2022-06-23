@@ -1,6 +1,6 @@
-import { Card } from "./cards.js";
+import { Card } from "./Card.js";
 import {initialCards, validation} from "./constans.js";
-import FormValidator from "./validate.js";
+import FormValidator from "./FormValidator.js";
 
 const container = document.querySelector('.elements');
 const сardsElement = document.querySelector('.elements__item');
@@ -8,6 +8,7 @@ const photoTemplate = document.querySelector('#photo-template').content;
 const profilePopup = document.querySelector('.popup-profile');
 const profileOpenBtn = document.querySelector('.profile__edit-button');
 const profileForm = document.querySelector('.popup-profile__form');
+const photoForm = document.querySelector('.popup-photo__form');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
 const profileName = document.querySelector('.profile__name');
@@ -55,7 +56,7 @@ function handleProfileFormSubmit (evt) {
     closePopup(profilePopup);
 } 
 
-const сardsElementImage = function(data) {
+const handleImage = function(data) {
     const {name, link} = data;
     openImage.src = link;
     openImage.alt = link;
@@ -66,7 +67,7 @@ const сardsElementImage = function(data) {
  //создание новой карточки фото
 const createCard = (data) => {
     const {name, link} = data;
-    const card = new Card (name, link, '#photo-template', сardsElementImage);
+    const card = new Card (name, link, '#photo-template', handleImage);
     return card.generateCard();
 }
 
@@ -79,37 +80,34 @@ const saveCard = (evt) => {
     renderCard(createCard({name: photoInput.value, link: titleInput.value}));
     closePopup(photoPopup);
     evt.target.reset();
-    disabledSubmitButton();
-}
-
-const disabledSubmitButton = () => {
-    const disabledButton = photoPopup.querySelector('.popup__save-button');
-    disabledButton.classList.add('popup__save-button_noactive');
-    disabledButton.setAttribute('disabled', true);
 }
 
 initialCards.reverse().forEach((item) => {
     renderCard(createCard(item));
 }) 
 
-const FormValidators = {};
+const formValidators = {};
 Array.from(document.forms).forEach((formElement) => {
-    FormValidators[formElement.name] = new FormValidator(validation, formElement);
-    FormValidators[formElement.name].enableValidation();
+    formValidators[formElement.name] = new FormValidator(validation, formElement);
+    formValidators[formElement.name].enableValidation();
 })
 
  //обработчики событий
+
 profileOpenBtn.addEventListener("click", () => {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
+    formValidators[profileForm.name].cleanUpForm();
     openPopup(profilePopup);
 })
+
+buttonPhoto.addEventListener('click', () => {
+    formValidators[photoForm.name].cleanUpForm();
+    openPopup(photoPopup) });
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 photoPopup.addEventListener("submit", saveCard);
-
-buttonPhoto.addEventListener('click', () => {openPopup(photoPopup) });
 
 closeButtons.forEach((button) => {
     const popup = button.closest('.popup');
