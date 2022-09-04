@@ -26,9 +26,45 @@ export const initialCards = [
     }
 ];
 
+export const container = document.querySelector('.elements');
+export const profileOpenBtn = document.querySelector('.profile__edit-button');
+export const profileForm = document.querySelector('.popup-profile__form');
+export const photoForm = document.querySelector('.popup-photo__form');
+export const nameInput = document.querySelector('.popup__input_type_name');
+export const jobInput = document.querySelector('.popup__input_type_job');
+export const photoInput = document.querySelector('.popup__input_type_photo');
+export const titleInput = document.querySelector('.popup__input_type_title');
+export const buttonPhoto = document.querySelector('.profile__add-button');
+
 export const validation = {
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__save-button',
     inactiveButtonClass: 'popup__save-button_noactive',
     inputErrorClass: 'popup__input_type_error',
 };
+
+export const cardListSelector = '.elements';
+export const newCardContainer = '.elements-item';
+export const profilePopupSelector = '.popup-profile';
+export const cardPopupSelector = '.popup-photo';
+export const bigPhotoSelector = '.popup-bigPhoto';
+
+export const popupConfig = {
+    openModifier: 'popup_opened',
+    closeBtnSelector: '.popup__close-button',
+}
+
+export const bigPhotoConfig = {
+    imgSelector: '.popup__image',
+    captionSelector: '.popup__text',
+}
+
+export const formConfig = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+}
+
+export const profileConfig = {
+    nameSelector: '.profile__name',
+    jobSelector: '.profile__job',
+}

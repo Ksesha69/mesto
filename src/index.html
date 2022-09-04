@@ -9,26 +9,24 @@
     <body class="root">
         <div class="page">
             <header class="header"> 
-                <a href="#">
-                    <img class="header__logo" alt="логотип" src="./images/logo.svg">
-                </a>
+                    <img class="header__logo" alt="логотип" src="<%=require('./images/logo.svg')%>">
             </header>
             <main>
                 <section class="profile">
                     <div class="profile__info">
-                        <img class="profile__avatar" alt="Жак-Ив Кусто" src="./images/image.jpg">
+                        <img class="profile__avatar" alt="Жак-Ив Кусто" src="<%=require('./images/image.jpg')%>">
                         <div class="profile__text">
                             <div>
-                                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                                <h1  class="profile__name">Жак-Ив Кусто</h1>
                                 <p class="profile__job">Исследователь океана</p>
                             </div>
                             <button type="button" class="button profile__edit-button">
-                                <img src="./images/Vector.svg" alt="Изменить подпись">
+                                <img src="<%=require('./images/Vector.svg')%>" alt="Изменить подпись">
                             </button>
                         </div>
                     </div>
                     <button type="button" class="profile__add-button">
-                        <img class="profile__image-button" src="./images/plus.svg" alt="Добавить фото">
+                        <img class="profile__image-button" src="<%=require('./images/plus.svg')%>" alt="Добавить фото">
                     </button>
                 </section>
                 <section class="elements">
@@ -43,24 +41,24 @@
             <div class="popup__container">
                 <button type="button" class="button popup__close-button"></button>
                 <h2 class="popup__header">Редактировать профиль</h2>
-                <form name="form__profile" class="popup__form popup-profile__form" novalidate>
-                    <input type="text" id="name-input" required minlength="2" maxlength="40" name="input_name" class="popup__input popup__input_type_name">
-                    <span id="name-input-error" class='popup__input-error'></span>
-                    <input type="text" id="job-input" required minlength="2" maxlength="200" name="input_job" class="popup__input popup__input_type_job">
-                    <span id="job-input-error" class='popup__input-error'></span>
+                <form name="profile" class="popup__form popup-profile__form" novalidate>
+                    <input type="text" value="" id="profile-input-name" required minlength="2" maxlength="40" name="input-name" class="popup__input popup__input_type_name">
+                    <span id="profile-input-name-error" class='popup__input-error'></span>
+                    <input type="text" value="" id="profile-input-about" required minlength="2" maxlength="200" name="input-job" class="popup__input popup__input_type_job">
+                    <span id="profile-input-about-error" class='popup__input-error'></span>
                     <button type="submit" class="button popup__save-button">Сохранить</button>
                 </form>
             </div>
         </div>
         <div class="popup popup-photo">
             <div class="popup__container">
-                <form name="form__add-photo" class="popup__form popup-photo__form" novalidate>
+                <form name="photo" class="popup__form popup-photo__form" novalidate>
                     <button type="button" class="button popup__close-button"></button>
                     <h2 class="popup__header">Новое место</h2>
-                    <input required type="text" minlength="2" id="pic-input" name="input_photo" class="popup__input popup__input_type_photo" placeholder="Название">
-                    <span id="pic-input-error" class='popup__input-error'></span>
-                    <input required type="url" id="url-input" name="input_title" class="popup__input popup__input_type_title" placeholder="Ссылка на картинку">
-                    <span id="url-input-error" class='popup__input-error'></span>
+                    <input required type="text" value="" minlength="2" id="picture-input-name" name="input-photo" class="popup__input popup__input_type_photo" placeholder="Название">
+                    <span id="picture-input-name-error" class='popup__input-error'></span>
+                    <input required type="url" value="" id="picture-input-link" name="input-title" class="popup__input popup__input_type_title" placeholder="Ссылка на картинку">
+                    <span id="picture-input-link-error" class='popup__input-error'></span>
                     <button type="submit" class="button popup__save-button">Создать</button>
                 </form>
             </div>
@@ -68,7 +66,7 @@
         <div class="popup popup-bigPhoto">
             <div class="popup__container-photo">
                 <button type="button" class="button button_close-photo popup__close-button"></button>
-                <img src="#" class="popup__image">
+                <img src="<%=require('#')%>" class="popup__image">
                 <h2 class="popup__text"></h2>
             </div>
         </div>
@@ -82,6 +80,5 @@
             </div>
         </div>
         </template>
-        <script type="module" src="./scripts/index.js"></script> 
     </body>
 </html>

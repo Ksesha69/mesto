@@ -1,9 +1,9 @@
 export class Card {
-    constructor (name, link, cardSelector, handleOpenPhoto) {
+    constructor (name, link, cardSelector, handleCardClick) {
       this._name = name;
       this._link = link;
       this._cardSelector = cardSelector;
-      this._handleOpenPhoto = handleOpenPhoto;
+      this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -51,6 +51,6 @@ export class Card {
     this._element.remove();
   }
   _handleOpenClick() {
-    this._handleOpenPhoto({link: this._link, name: this._name})
+    this._handleCardClick({link: this._link, name: this._name})
   }
 }

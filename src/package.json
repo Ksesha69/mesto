@@ -1,0 +1,20 @@
+{
+  "name": "mesto",
+  "version": "0.0.1",
+  "description": "1) Создание дополнительного файла для хранения карточек и переменных.\r 2) Создание классов Card и FormValidator для выполнения определенной задачи.\r 3) Использование import и export для связи файлов.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ksesha69/mesto.git"
+  },
+  "author": "kseniya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ksesha69/mesto/issues"
+  },
+  "homepage": "https://github.com/Ksesha69/mesto#readme"
+}
+
