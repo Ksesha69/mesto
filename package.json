@@ -4,7 +4,7 @@
   "description": "1) Создание дополнительного файла для хранения карточек и переменных.\r 2) Создание классов Card и FormValidator для выполнения определенной задачи.\r 3) Использование import и export для связи файлов.",
   "main": "./src/pages/index.js",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "rd /s /q dist && webpack",
     "dev": "webpack serve"
   },
   "repository": {
