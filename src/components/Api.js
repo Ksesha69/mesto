@@ -6,9 +6,12 @@ export class Api {
 
     _handleResponse = (res) => {
         if(res.ok) {
-            return res.json()
+            return res.json();
         }
-        return Promise.reject('Ошибка');
+        return res.json().then((err) => {
+            err.code = res.status;
+            return Promise.reject(err);
+        });
     }
 
     getInitialCard() {
@@ -56,7 +59,7 @@ export class Api {
             method: "PATCH",
             headers: this.headers,
             body: JSON.stringify({
-                link: `${url}`,
+                avatar: `${url}`,
             })
         })
         .then(this._handleResponse);
@@ -70,9 +73,9 @@ export class Api {
     .then(this._handleResponse);
     }
 
-    toggleLike(id) {
+    toggleLike(id, isLiked) {
         return fetch(`${this.url}/cards/${id}/likes`, {
-            method: 'PUT',
+            method: isLiked ? 'DELETE' : 'PUT',
             headers: this.headers,
         })
     .then(this._handleResponse)

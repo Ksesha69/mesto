@@ -7,9 +7,7 @@ export class UserInfo {
         this._jobElement = document.querySelector(`${this._jobSelector}`);
         this._avatarElement = document.querySelector(`${this._avatarSelector}`);
         this.getUserInfo = this.getUserInfo.bind(this);
-        this.getUserId = this.getUserId.bind(this);
         this.setUserInfo = this.setUserInfo.bind(this);
-        this.setUserAvatar = this.setUserAvatar.bind(this);
     }
 
     getUserInfo() {
@@ -20,20 +18,23 @@ export class UserInfo {
         return userInfo;
     }
 
-    getUserId() {
-        return {
-            _id: this._id,
-        }
+    get userId() {
+        return this._id;
     }
 
-    setUserInfo( name, about, _id ) {
+    set user({name, about, avatar, _id}) {
         this._nameElement.textContent = name;
         this._jobElement.textContent = about;
+        this._avatarElement.src = avatar;
         this._id = _id;
-
     }
 
-    setUserAvatar(avatar) {
+    setUserInfo( {name, about} ) {
+        this._nameElement.textContent = name;
+        this._jobElement.textContent = about;
+    }
+
+    set userAvatar({avatar}) {
         this._avatarElement.src = avatar;
     }
 }
