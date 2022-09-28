@@ -7,7 +7,6 @@ export class Card {
     this._owner = owner._id;
     this._userId = userId;
     this._cardSelector = cardSelector;
-    
     this._cardLikeCallback = handleCardLike;
     this._cardDeleteCallback = handleDeleteClick;
     this._cardViewCallback = handleCardClick;
@@ -34,31 +33,34 @@ export class Card {
   }
   
 
-_toggleLike() {
-    if(this._isLiked) {
+_renderLikes() {
+    if(this._isLiked()) {
+      console.dir(this._isLiked());
       this._likeButtonElement.classList.add('elements__like_active');
     }
     else {
       this._likeButtonElement.classList.remove('elements__like_active');
     }
+    this._likeAmountElement.textContent = this._like.length;
   }
 
 _isLiked() {
-  return this._like.some((item) => item._id === this._userId);
+  return this._like.some((item) => {
+    console.log(`item._id = '${item._id}', this._userId = '${this._userId}', returning '${item._id === this._userId}'`);
+    console.dir(this);
+    return item._id === this._userId;
+  });
 }
 
 _isOwn() {
   return this._owner === this._userId;
 }
 
-_renderLikes() {
-  this._likeAmountElement.textContent = this._like.length;
-}
+
 
 setLikes(likes) {
   this._like = likes;
   this._renderLikes();
-  this._toggleLike();
 }
 
 deleteCard() {
