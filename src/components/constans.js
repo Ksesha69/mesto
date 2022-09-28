@@ -1,5 +1,5 @@
  //добавление карточек
-export const initialCards = [
+/* export const initialCards = [
     {
     name: 'Алтай',
     link: 'https://images.unsplash.com/photo-1634876371724-82860814ad94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
@@ -24,10 +24,12 @@ export const initialCards = [
     name: 'Байкал',
     link: 'https://images.unsplash.com/photo-1610984660607-90b67b18e2c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
     }
-];
+]; */
 
+export const myId = '2137a5f709e7bc8d6d42a275';
 export const container = document.querySelector('.elements');
 export const profileOpenBtn = document.querySelector('.profile__edit-button');
+export const popupForm = document.querySelector('.popup__form');
 export const profileForm = document.querySelector('.popup-profile__form');
 export const photoForm = document.querySelector('.popup-photo__form');
 export const nameInput = document.querySelector('.popup__input_type_name');
@@ -35,6 +37,9 @@ export const jobInput = document.querySelector('.popup__input_type_job');
 export const photoInput = document.querySelector('.popup__input_type_photo');
 export const titleInput = document.querySelector('.popup__input_type_title');
 export const buttonPhoto = document.querySelector('.profile__add-button');
+export const avatarPhotoBtn = document.querySelector('.profile__avatar-button');
+export const buttonDelete = document.querySelector('.button__delete');
+export const saveButton = document.querySelector('.popup__save-button');
 
 export const validation = {
     inputSelector: '.popup__input',
@@ -48,6 +53,8 @@ export const newCardContainer = '.elements-item';
 export const profilePopupSelector = '.popup-profile';
 export const cardPopupSelector = '.popup-photo';
 export const bigPhotoSelector = '.popup-bigPhoto';
+export const avatarPopupSelector = '.popup-avatar';
+export const deletePopupSelector = '.popup-delete';
 
 export const popupConfig = {
     openModifier: 'popup_opened',
@@ -67,4 +74,6 @@ export const formConfig = {
 export const profileConfig = {
     nameSelector: '.profile__name',
     jobSelector: '.profile__job',
+    avatarSelector: '.profile__avatar'
 }
+

@@ -19,7 +19,6 @@ export class PopupWithForm extends Popup {
         if (this._getterCallback) {
             this._setInputValues(this._getterCallback());
         }
-        this._resetErrorsHandler();
         super.open();
     }
 

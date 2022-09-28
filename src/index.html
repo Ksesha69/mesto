@@ -13,6 +13,7 @@
             <main>
                 <section class="profile">
                     <div class="profile__info">
+                        <button class="profile__avatar-button"></button>
                         <img class="profile__avatar" alt="Жак-Ив Кусто" src="<%=require('./images/image.jpg')%>">
                         <div class="profile__text">
                             <div>
@@ -62,6 +63,17 @@
                 </form>
             </div>
         </div>
+        <div class="popup popup-avatar">
+            <div class="popup__container popup__container_avatar">
+                <form name="avatar" class="popup__form popup-avatar__form" novalidate>
+                    <button type="button" class="button popup__close-button"></button>
+                    <h2 class="popup__header">Обновить аватар</h2>
+                    <input required type="url" id="userpic-input-avatar" name="input-avatar" class="popup__input popup__input_type_avatar" placeholder="Ссылка на картинку">
+                    <span id="userpic-input-avatar-error" class='popup__input-error'></span>
+                    <button type="submit" class="button popup__save-button">Создать</button>
+                </form>
+            </div>
+        </div>
         <div class="popup popup-bigPhoto">
             <div class="popup__container-photo">
                 <button type="button" class="button button_close-photo popup__close-button"></button>
@@ -69,13 +81,25 @@
                 <h2 class="popup__text"></h2>
             </div>
         </div>
+        <div class="popup popup-delete">
+            <div class="popup__container popup__container_delete">
+                <form name="delete" class="popup__form">
+                    <button type="button" class="button popup__close-button"></button>
+                    <h2 class="popup__header">Вы уверены?</h2>
+                    <button type="submit" class="button popup__save-button">Да</button>
+                </form>
+            </div>
+        </div> 
         <template id="photo-template">
         <div class="elements__item">
             <button type="button" class="button__image"><img class="elements__image"></button>
             <button type="button" class="button__delete button"></button>
             <div class="elements__table">
                 <h2 class="elements__text"></h2>
-                <button type="button" class="button elements__like"></button>
+                <div class="elements__container">
+                    <button type="button" class="button elements__like"></button>
+                    <h4 class="elements__like_amount">0</h4>
+                </div>
             </div>
         </div>
         </template>
